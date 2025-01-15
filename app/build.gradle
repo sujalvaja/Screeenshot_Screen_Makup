@@ -1,0 +1,135 @@
+import java.text.SimpleDateFormat
+
+apply plugin: "com.android.application"
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'org.jetbrains.kotlin.android'
+
+
+android {
+    compileSdk 33
+    packagingOptions {
+        exclude 'META-INF/*'
+    }
+    defaultConfig {
+        applicationId "jp.juggler.screenshotbutton"
+        minSdk 21
+        targetSdk 33
+        versionCode 8
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+
+    kotlinOptions {
+        freeCompilerArgs += "-opt-in=kotlin.Experimental"
+    }
+    dataBinding {
+        enabled = true
+    }
+    viewBinding {
+        enabled = true
+    }
+    repositories {
+        mavenCentral()
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    android.applicationVariants.all { variant ->
+        if (variant.buildType.name == "release") {
+            variant.outputs.all {
+                // Rename APK
+                def versionCode = defaultConfig.versionCode
+                def versionName = defaultConfig.versionName
+                def flavor = variant.buildType.name
+                def date = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date())
+                outputFileName = "../../ScreenShot:screenshotmarkup-${flavor}-${versionCode}-${versionName}-${date}.apk"
+            }
+        }
+    }
+}
+
+dependencies {
+
+
+    //noinspection AnnotationProcessorOnCompilePath
+    implementation 'com.android.databinding:compiler:3.5.1'
+    implementation 'androidx.recyclerview:recyclerview:1.3.0'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-runtime-ktx:2.6.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.6.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
+    implementation 'androidx.core:core-ktx:1.10.1'
+    testImplementation "junit:junit:4.13.2"
+    androidTestImplementation "androidx.test:runner:1.5.2"
+    androidTestImplementation "androidx.test.ext:junit:1.1.5"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
+
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.fragment:fragment-ktx:1.6.0'
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+
+
+    implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation "androidx.documentfile:documentfile:1.0.1"
+    implementation "androidx.media:media:1.6.0"
+    def multidex_version = "2.0.1"
+    implementation "androidx.multidex:multidex:$multidex_version"
+
+    implementation 'com.intuit.ssp:ssp-android:1.1.0'
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+
+
+    implementation 'com.burhanrashid52:photoeditor:3.0.1'
+
+    implementation "com.github.GerardBradshaw:CollageView:1.0.0-beta0"
+
+    implementation 'javax.inject:javax.inject:1'
+
+    implementation "com.github.MikeOrtiz:TouchImageView:3.0.3"
+
+
+
+
+    def daggerVer = 2.45 // or latest version
+
+    api 'com.google.dagger:dagger:2.46.1'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.46.1'
+    kapt 'com.google.dagger:dagger-compiler:2.46.1'
+
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.6.0'
+    androidTestImplementation 'androidx.navigation:navigation-testing:2.6.0'
+    implementation 'com.gerardbradshaw:colorpicker:2.0.2'
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:28.0.0'
+
+    implementation 'com.google.firebase:firebase-storage:20.2.0'
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+
+    implementation 'com.google.firebase:firebase-database:20.2.2'
+
+    implementation  'io.ak1:bubbletabbar:1.0.8'
+
+
+}

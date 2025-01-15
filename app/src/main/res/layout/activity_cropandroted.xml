@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg"
+    android:padding="@dimen/_15sdp"
+
+    tools:ignore="HardcodedText">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:id="@+id/rline1"
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnback"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:background="@drawable/back_icn"
+            android:layout_marginStart="@dimen/_5sdp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/btnback"
+            android:text="File Editor"
+            android:textSize="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_medium_0"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cropimgnextpage"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/next_btn"
+            android:gravity="center" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/card1"
+        android:weightSum="3"
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/croproted"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/rotate_image"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/fliped"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_weight="1"
+            android:background="@drawable/flip_horizontal_btn"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_toEndOf="@id/BSelectImage"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/flipedvertical"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/flip_vertical_btn"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textSize="18sp"
+            />
+
+        <!--Button to open the image selector-->
+
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card1"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="@dimen/_250sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/rline1"
+        android:requiresFadingEdge="horizontal"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:padding="@dimen/_10sdp"
+        >
+        <!--ImageView to preview the selected image-->
+        <com.theartofdev.edmodo.cropper.CropImageView
+            android:id="@+id/cropimg"
+            android:layout_width="@dimen/_260sdp"
+            android:layout_height="@dimen/_230sdp"
+            android:layout_below="@id/rline1"
+            android:src="@drawable/paris_tower"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

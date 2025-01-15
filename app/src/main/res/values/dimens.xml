@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <dimen name="editor_size">35dp</dimen>
+    <dimen name="top_tool_icon_width">50dp</dimen>
+    <dimen name="image_init_margin">8dp</dimen>
+
+    <dimen name="recycler_and_picker_height">52dp</dimen>
+
+
+    <dimen name="collage_layout_border_thickness">2dp</dimen>
+
+</resources>

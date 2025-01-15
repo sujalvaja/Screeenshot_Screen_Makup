@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5sdp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_58sdp"
+        android:layout_height="@dimen/_90sdp"
+        app:cardCornerRadius="@dimen/_10sdp">
+
+        <ImageView
+            android:id="@+id/imgFilterView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/paris_tower" />
+    </androidx.cardview.widget.CardView>
+
+
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/txtFilterName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#90000000"
+        android:gravity="center"
+        android:padding="@dimen/_4sdp"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_8ssp"
+        tools:text="@tools:sample/full_names" />
+
+</RelativeLayout>

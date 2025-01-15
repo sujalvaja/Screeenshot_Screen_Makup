@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <!--  <group
+        android:id="@+id/main_options_menu_group" >
+
+        <item
+            android:id="@+id/action_share"
+            android:orderInCategory="100"
+            android:title="@string/action_share"
+            app:showAsAction="ifRoom"
+            android:icon="@drawable/share_icn" />
+
+        <item
+            android:id="@+id/action_save"
+            android:orderInCategory="120"
+            android:title="@string/action_save_to_gallery"
+            app:showAsAction="ifRoom"
+            android:icon="@drawable/save_image_btn" />
+
+        <item
+            android:id="@+id/action_reset"
+            android:orderInCategory="150"
+            android:title="@string/action_start_over"
+            app:showAsAction="ifRoom"
+            android:icon="@drawable/ic_menu_refresh" />
+
+    </group>-->
+</menu>

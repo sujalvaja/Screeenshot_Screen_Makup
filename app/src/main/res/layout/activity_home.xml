@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_15sdp"
+    android:background="@drawable/bg"
+    tools:context=".HomeActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:id="@+id/rline1"
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnback"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:background="@drawable/back_icn"
+            android:layout_marginStart="@dimen/_5sdp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/btnback"
+            android:text="@string/setting"
+            android:textSize="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_medium_0"
+            />
+    </RelativeLayout>
+
+  <LinearLayout
+      android:id="@+id/line1"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:layout_below="@id/rline1"
+      android:weightSum="2"
+      android:layout_marginTop="@dimen/_10sdp"
+      android:background="@drawable/settingbg"
+      >
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:orientation="vertical"
+          android:gravity="center">
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:fontFamily="@font/roboto_medium_0"
+              android:text="@string/overlay_button_size1"
+              android:textColor="@color/black"
+              android:layout_marginStart="@dimen/_2sdp"
+              android:textSize="@dimen/_13sdp" />
+          <TextView
+              android:layout_height="wrap_content"
+              android:layout_width="wrap_content"
+              android:fontFamily="@font/roboto_medium_0"
+              android:textColor="@color/black"
+              android:textSize="@dimen/_9sdp"
+              android:text="@string/uint_dp_restart_required" />
+      </LinearLayout>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="0dp"
+          android:layout_height="@dimen/_60sdp"
+          android:layout_weight="1"
+          app:cardCornerRadius="@dimen/_10sdp"
+          android:backgroundTint="#D3E3DD"
+          android:layout_margin="@dimen/_10sdp">
+          <androidx.appcompat.widget.AppCompatEditText
+          android:id="@+id/etButtonSize"
+          android:layout_weight="1"
+          android:layout_height="wrap_content"
+          android:layout_width="match_parent"
+              android:hint="40"
+              android:layout_gravity="center"
+              android:gravity="center"
+          android:inputType="number"
+          />
+      </androidx.cardview.widget.CardView>
+
+      <TextView
+          android:id="@+id/tvButtonSizeError"
+          style="@style/setting_item"
+          android:gravity="end"
+          android:text="@string/button_size_error"
+          android:textColor="@color/colorTextError"
+          android:visibility="gone"/>
+
+  </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@id/line1"
+        android:weightSum="2"
+        android:background="@drawable/settingbg"
+        android:visibility="gone"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="@dimen/_10sdp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.8"
+                android:weightSum="2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_height="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_medium_0"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:text="@string/save_folder"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_10sdp"/>
+                <TextView
+                    android:layout_height="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_medium_0"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:textSize="@dimen/_10sdp"
+                    android:text="(Select path to save files)" />
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSaveFolder"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_weight="0.2"
+                android:layout_marginStart="6dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/edit_icn"
+                />
+        </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="1"
+                app:cardCornerRadius="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:backgroundTint="#D3E3DD"
+                >
+
+                <TextView
+                    android:id="@+id/tvSaveFolder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorText"
+                    android:hint="/storage/emulated/0"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    />
+            </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_below="@id/line2"
+        android:background="@drawable/settingbg"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:padding="@dimen/_10sdp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.7"
+            android:weightSum="2"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_height="0dp"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_medium_0"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:text="@string/still_settings"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_10sdp"/>
+            <TextView
+                android:layout_height="0dp"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_medium_0"
+                android:textColor="@color/black"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:textSize="@dimen/_10sdp"
+                android:text="@string/save_png" />
+        </LinearLayout>
+
+
+        <ToggleButton
+            android:id="@+id/swSavePng"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_weight="0.3"
+            android:layout_marginStart="6dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:button="@null"
+            android:textOn=""
+            android:textOff=""
+            android:background="@drawable/togalbuttton"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_below="@id/line3"
+        android:background="@drawable/settingbg"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:padding="@dimen/_10sdp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.7"
+            android:weightSum="2"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_height="0dp"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_medium_0"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:text="@string/other_settings"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_10sdp"/>
+            <TextView
+                android:layout_height="0dp"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_medium_0"
+                android:textColor="@color/black"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:textSize="@dimen/_10sdp"
+                android:text="@string/show_post_view_after_capture" />
+        </LinearLayout>
+
+
+        <ToggleButton
+            android:id="@+id/swShowPostView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_weight="0.3"
+            android:layout_marginStart="6dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:button="@null"
+            android:textOn=""
+            android:textOff=""
+            android:background="@drawable/togalbuttton"
+            />
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <Button
+        android:id="@+id/btnResetPositionStill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:text="@string/reset_position"
+        tools:ignore="ButtonStyle"
+        android:layout_below="@id/line4"
+        android:visibility="gone"
+        />
+
+
+
+
+
+    <LinearLayout
+        style="@style/setting_item"
+        android:baselineAligned="true"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:labelFor="@+id/etBitRate"
+            android:text="@string/bit_rate"
+            android:textColor="@color/colorText" />
+
+        <EditText
+            android:id="@+id/etBitRate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:importantForAutofill="no"
+            android:inputType="number" />
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/tvCodec"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_weight="1"
+        android:layout_below="@id/line4"
+        android:textColor="@color/colorText"
+        android:textSize="12sp" />
+</RelativeLayout>
+

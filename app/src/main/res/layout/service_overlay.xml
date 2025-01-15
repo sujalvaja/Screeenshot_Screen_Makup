@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jp.juggler.screenshotbutton.MyImageButton xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/btnCamera"
+    android:layout_width="@dimen/_40sdp"
+    android:layout_height="@dimen/_40sdp"
+    android:importantForAccessibility="noHideDescendants"
+    android:scaleType="centerCrop"
+    android:padding="10dp"
+    android:background="@drawable/floating_ss_icn"
+     />

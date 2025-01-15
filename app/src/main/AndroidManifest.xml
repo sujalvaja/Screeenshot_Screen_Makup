@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="jp.juggler.screenshotbutton">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!--
+ <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    -->
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".App1"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity
+            android:name="jp.juggler.photoediting.Historydemo"
+            android:exported="false" >
+        </activity>
+        <activity
+            android:name="jp.juggler.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="jp.juggler.photoediting.SavePerview"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScreenshootCrop"
+            android:exported="false" />
+        <activity
+            android:name="jp.juggler.photoediting.cropandroted"
+            android:exported="false" />
+        <activity
+            android:name="jp.juggler.photoediting.CropActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ActMain"
+            android:exported="false" />
+        <!--
+ <activity
+            android:name="jp.juggler.croppy.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+
+            />
+        -->
+        <activity
+            android:name="jp.juggler.photoediting.EditImageActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <intent-filter
+                android:label="@string/app_intent_name"
+                android:scheme="file"
+                tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="action_nextgen_edit" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+
+<!--        <meta-data-->
+<!--            android:name="preloaded_fonts"-->
+<!--            android:resource="@array/preloaded_fonts" />-->
+
+        <activity
+            android:name=".ActViewer"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:taskAffinity="jp.juggler.screenshotbutton.viewer"
+            android:theme="@style/AppTheme.Viewer" />
+        <activity
+            android:name=".ActScreenCaptureIntent"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:taskAffinity="jp.juggler.screenshotbutton.asci"
+            android:theme="@style/AppTheme.Transparent" />
+        <activity
+            android:name=".ActExitReasons"
+            android:exported="false"
+            android:theme="@style/AppTheme" />
+
+        <service
+            android:name=".CaptureServiceStill"
+            android:exported="false"
+            android:foregroundServiceType="mediaProjection"
+            android:stopWithTask="false"
+            tools:targetApi="q" />
+        <service
+            android:name=".CaptureServiceVideo"
+            android:exported="false"
+            android:foregroundServiceType="mediaProjection"
+            android:stopWithTask="false"
+            tools:targetApi="q" />
+
+        <receiver android:name=".MyReceiver" />
+
+        <activity
+            android:name="jp.juggler.v2mixup.ui.MainActivity"
+            android:theme="@style/AppTheme.Viewer">
+
+            <!--
+                <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+
+        <provider
+            android:name="jp.juggler.v2mixup.utils.ImageFileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.anni.shareimage.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/paths" />
+        </provider>
+    </application>
+
+</manifest>

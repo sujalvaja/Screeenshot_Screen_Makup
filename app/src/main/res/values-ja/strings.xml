@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_editor">menu_editor</string>
+    <string name="preview">Preview</string>
+    <string name="bitmao">bitmap</string>
+    <string name="bitmap">bitmap</string>
+</resources>
