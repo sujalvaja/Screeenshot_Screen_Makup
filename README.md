@@ -29,10 +29,10 @@ Android app that shows overlay screen shot button.
 ## Screen shot example
 
 The shape like 'aperture' at the top-left corner on screen is overlay shutter button. You can move it by dragging.
-![Screenshot_20191221_232648_jp juggler screenshotbutton](https://user-images.githubusercontent.com/333944/71309445-08fa7400-244b-11ea-9dba-94005e2dc28b.jpg)
+
 
 This app shows the 'post view' after tap shutter button.
-![Screenshot_20191221_232724_jp juggler screenshotbutton](https://user-images.githubusercontent.com/333944/71309446-0b5cce00-244b-11ea-84c6-180f9b7e562c.jpg)
+
 
 ### Motivation
 I think this app has no something new, but I need codes that I can hack freely to solve problems on my device.
